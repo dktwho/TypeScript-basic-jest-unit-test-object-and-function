@@ -1,7 +1,5 @@
-
-
 import {StudentType} from "./02";
-import {addSkill} from "./03";
+import {addSkill, makeStudentActive} from "./03";
 
 let student: StudentType
 beforeEach(() => {
@@ -32,7 +30,11 @@ test('new stack skill should be added to student', () => {
     expect(student.stack.length).toBe(5);
     expect(student.stack[4].title).toBe('Vue');
     expect(student.stack[4].id).toBeDefined();
+})
 
-
+test('student should be made active ', () => {
+    expect(student.isActive).toBe(false);
+    makeStudentActive(student);
+    expect(student.isActive).toBe(true);
 
 })
