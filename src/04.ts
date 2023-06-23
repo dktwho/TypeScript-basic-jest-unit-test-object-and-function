@@ -11,9 +11,13 @@ export const repairHouse = (city: HouseType) => {
 }
 
 export const toFireStaff = (building: GovernmentBuildings, staffToFire: number) => {
-    building.staffCount  -=staffToFire
+    building.staffCount -= staffToFire
 }
 
 export const toHireStaff = (building: GovernmentBuildings, staffToIncrease: number) => {
-    building.staffCount +=  staffToIncrease
+    building.staffCount += staffToIncrease
+}
+
+export const createMessage = (city: CityType) => {
+    return 'Hello New York citizens, for all 1000000'
 }

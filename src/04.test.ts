@@ -1,5 +1,5 @@
 import {CityType} from "./022";
-import {addMoneyToBudget, repairHouse, toFireStaff, toHireStaff} from "./04";
+import {addMoneyToBudget, createMessage, repairHouse, toFireStaff, toHireStaff} from "./04";
 
 let city: CityType;
 
@@ -77,6 +77,13 @@ test('Staff should be reduced', () => {
 // 05. Создайте в том же файле еще одну функцию, чтобы тесты прошли
 test('Staff should be increased', () => {
     toHireStaff(city.governmentBuildings[0], 20);
-
     expect(city.governmentBuildings[0].staffCount).toBe(220);
+
+    toHireStaff(city.governmentBuildings[1], 20);
+    expect(city.governmentBuildings[1].staffCount).toBe(1020);
+});
+
+test('message greeting should be correct', () => {
+    const message = createMessage(city);
+    expect(message).toBe(`Hello ${city.title} citizens, for all ${city.citizensNumber}`);
 });
