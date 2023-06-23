@@ -1,4 +1,4 @@
-type StudentType = {
+ export type StudentType = {
     id: number;
     name: string;
     age: number;
@@ -22,7 +22,7 @@ type StackType = {
     title: string;
 }
 
-const student = {
+ export const student = {
     id: 1,
     name: 'Bill',
     age: 32,
